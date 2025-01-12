@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, white, #FFFDD0, violet);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-image: url('./xPub.png');
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.editor-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px;
+  width: 100%;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.editor-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 2rem;
+}
+
+.editor-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 0 5px;
+}
+
+button, select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover, select:hover {
+  background-color: #45a049;
+}
+
+.editor-content {
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 400px;
+}
+
+/* Font menu styles */
+.font-menu {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  margin-top: 5px;
+}
+
+.font-menu div {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.font-menu div:hover {
+  background-color: #4CAF50;
+}
+
+/* Bubble menu styles */
+.bubble-menu {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.bubble-menu button {
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.bubble-menu button:hover {
+  background-color: #d48816;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bubble-menu button:active {
+  background-color: #c7770f;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Extra bubble menu animation */
+.bubble-menu button {
+  animation: bubbleAnimation 1s ease-in-out infinite;
+}
+
+@keyframes bubbleAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
